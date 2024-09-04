@@ -1,5 +1,5 @@
 module.exports = {
-  singleQuote: true,
-  endOfLine: 'auto',
-  tabWidth: 4,
+    singleQuote: true,
+    endOfLine: 'auto',
+    tabWidth: 4,
 };
