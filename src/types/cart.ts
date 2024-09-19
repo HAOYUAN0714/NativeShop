@@ -36,43 +36,37 @@ interface AddCart {
     resData: {
         data: Cart
     },
-    params: null,
 }
 
 interface GetCart {
-    reqData: null,
+    reqData: {},
     resData: {
         data: CartRes
     },
-    params: null,
 }
 
-interface UpdateCart {
+interface UpdateCartProduct {
     reqData: {
         product_id: string,
-        qty: number
+        qty: number,
+        path: string
     },
     resData: {
         product_id: string,
         qty: number
-    },
-    params: {
-        id: string
     },
 }
 
 interface DeleteCartProduct {
-    reqData: null,
-    resData: {},
-    params: {
-        id: string
+    reqData: {
+        path: string
     },
+    resData: {},
 }
 
 interface DeleteCart {
-    reqData: null,
+    reqData: {},
     resData: {},
-    params: null,
 }
 
 export type {
@@ -81,7 +75,7 @@ export type {
     CartProduct,
     CartRes,
     GetCart,
-    UpdateCart,
+    UpdateCartProduct,
     DeleteCart,
     DeleteCartProduct
 }

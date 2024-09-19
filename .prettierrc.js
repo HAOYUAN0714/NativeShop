@@ -4,5 +4,5 @@ module.exports = {
     tabWidth: 4,
     semi: true,
     printWidth: 200,
-    plugins: ['./prettier-plugin-ternary'],
+    // plugins: ['./prettier-plugin-ternary'],
 };

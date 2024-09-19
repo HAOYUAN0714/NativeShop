@@ -23,7 +23,7 @@ export default function TabLayout() {
       }, 1000);
     }
   }, [hideSplash, status]);
-
+    console.log('isFirstTime', isFirstTime);
   if (isFirstTime) {
     return <Redirect href="/onboarding" />;
   }

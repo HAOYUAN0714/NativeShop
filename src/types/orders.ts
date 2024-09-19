@@ -25,7 +25,7 @@ type OrderType = {
 
 type OrderListData = OrderProduct & OrderType;
 
-interface AddOrder {
+interface PostOrder {
     reqData: {
         data: {
             user: {
@@ -42,7 +42,6 @@ interface AddOrder {
         create_at: EpochTimeStamp | DOMHighResTimeStamp,
         orderId: string
     },
-    params: null,
 }
 
 interface GetOrderList {
@@ -59,16 +58,14 @@ interface GetOrderList {
             category: string
         },
     },
-    params: null,
 }
 
 interface GetOrderDetail {
-    reqData: null,
+    reqData: {
+        path: string
+    },
     resData: {
         orders: OrderType,
-    },
-    params: {
-        order_id: string
     },
 }
 
@@ -76,7 +73,7 @@ export {
     OrderProduct,
     OrderType,
     OrderListData,
-    AddOrder,
+    PostOrder,
     GetOrderList,
     GetOrderDetail,
 }

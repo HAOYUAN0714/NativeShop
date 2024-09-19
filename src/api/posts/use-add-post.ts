@@ -10,8 +10,9 @@ type Response = Post;
 export const useAddPost = createMutation<Response, Variables, AxiosError>({
   mutationFn: async (variables) =>
     client({
-      url: 'posts/add',
-      method: 'POST',
-      data: variables,
+        baseURL: 'https://dummyjson.com/',
+        url: 'posts/add',
+        method: 'POST',
+        data: variables,
     }).then((response) => response.data),
 });

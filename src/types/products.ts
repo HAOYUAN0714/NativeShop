@@ -14,11 +14,10 @@ type ProductInfo = {
 }
 
 interface GetAllProduct {
-    reqData: null;
+    reqData: {};
     resData: {
         products: ProductInfo[]
     },
-    params: null,
 }
 
 interface GetProductList {
@@ -29,20 +28,18 @@ interface GetProductList {
     resData: {
         products: ProductInfo[]
     },
-    params: null,
 }
 
 interface GetProductDetail {
     reqData: {
         page: string,
-        category: string
+        category: string,
+        path: string
     };
     resData: {
         products: ProductInfo[]
     };
-    params: {
-        id: string
-    }
+   
 }
 
 export {

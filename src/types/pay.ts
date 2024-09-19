@@ -1,13 +1,12 @@
 import { type OrderType } from "./orders"
 
 interface PayOrder {
-    reqData: null,
+    reqData: {
+        path: string
+    },
     resData: {
         orders: OrderType
     },
-    params: {
-        order_id: string
-    }
 }
 
 export {

@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router';
 import React from 'react';
 
-import { login as loginRequest } from '@/api/request/user';
+import API from '@/api/request'
 import type { LoginFormProps } from '@/components/login-form';
 import { LoginForm } from '@/components/login-form';
 import { useAuth } from '@/core';
@@ -11,29 +11,25 @@ export default function Login() {
     const router = useRouter();
     const signIn = useAuth.use.signIn();
 
-
     const onSubmit: LoginFormProps['onSubmit'] = async(data) => {
         const { email , password } = data;
 
-        const res = await loginRequest({
-            reqData: {
-                username: email,
-                password,
-            }
+        const res = await API.login({
+            username: email,
+            password,
         });
 
-        const { token } = res || {};
+        const { token, success = false } = res || {};
 
-        if (!token || !res?.success) {
-
+        if (!token || !success) {
             return;
         }
-
 
         console.log('login', data);
         signIn({ access: token, refresh: 'refresh-token' });
         router.push('/');
     };
+    
     return (
         <>
         <FocusAwareStatusBar />

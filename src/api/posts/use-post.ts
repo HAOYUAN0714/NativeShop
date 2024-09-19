@@ -11,7 +11,11 @@ export const usePost = createQuery<Response, Variables, AxiosError>({
   queryKey: ['posts'],
   fetcher: (variables) => {
     return client
-      .get(`posts/${variables.id}`)
-      .then((response) => response.data);
+        .request({
+            baseURL: 'https://dummyjson.com/',
+            url: `posts/${variables.id}`,
+            method: 'GET',
+        })
+        .then((response) => response.data);
   },
 });

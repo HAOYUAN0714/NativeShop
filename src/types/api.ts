@@ -1,17 +1,27 @@
+import type { AxiosRequestConfig } from 'axios';
+
 type BasicResponse = {
     success?: boolean;
     message?: string,
 };
 
-type RequestTypes<ReqData = any, ResData = any, Params = any> = {
-    reqData?: ReqData;
-    resData?: ResData;
-    params?: Params;
-    isFormData?: boolean;
+type BasicRequest = {
+    path?: string;
+}
+
+type RequestTypes<ReqData = undefined, ResData = undefined> = {
+    reqData?: ReqData & BasicRequest;
+    resData?: ResData & BasicResponse;
 }
 
 
+type RequestOptions<_T extends AxiosRequestConfig> = {
+
+}
+
 export {
     BasicResponse,
-    RequestTypes
+    BasicRequest,
+    RequestTypes,
+    RequestOptions
 }

@@ -6,7 +6,6 @@ interface UserLogin {
     resData: {
         token: string;
     };
-    params: null;
 }
 
 export {
