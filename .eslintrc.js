@@ -7,6 +7,8 @@ module.exports = {
         project: './tsconfig.json',
     },
     rules: {
+        indent: ['error', 4], // 使用 4 個空格進行縮排
+        semi: ['error', 'always'], // 行尾必須有分號
         'unicorn/filename-case': [
             'error',
             {
